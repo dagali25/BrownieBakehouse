@@ -18,6 +18,10 @@
     font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--dark-color);
     color: var(--text-color);
@@ -105,7 +109,7 @@ body {
 
 .app-main {
     padding: 1.5rem;
-    padding-bottom: 100px;
+    padding-bottom: 180px; /* Increased for footer space */
 }
 
 .section-title {
@@ -114,7 +118,6 @@ body {
     font-size: 1.3rem;
     border-bottom: 1px solid rgba(255, 108, 12, 0.3);
     padding-bottom: 0.8rem;
-    letter-spacing: 0.5px;
     position: relative;
 }
 
@@ -207,12 +210,13 @@ body {
 
 .gallery-section {
     margin-top: 3rem;
+    margin-bottom: 2rem;
 }
 
 .gallery-container {
     overflow: hidden;
     position: relative;
-    margin: 1.5rem 0;
+    margin: 1.5rem 0 3rem;
     border-radius: 8px;
 }
 
@@ -478,12 +482,14 @@ body {
     background-color: var(--lighter-dark);
     padding: 1.5rem;
     border-top: 1px solid rgba(255, 108, 12, 0.3);
+    z-index: 10;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .cta-buttons {
     display: flex;
     gap: 1.2rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .cta-btn {
@@ -542,7 +548,7 @@ body {
     
     .app-main {
         padding: 1.2rem;
-        padding-bottom: 120px;
+        padding-bottom: 200px; /* Even more space on mobile */
     }
     
     .item-controls {
@@ -551,6 +557,7 @@ body {
     
     .add-to-cart {
         padding: 0.8rem;
+        width: 100%;
     }
     
     .gallery-item {
@@ -564,7 +571,11 @@ body {
     }
     
     .cta-buttons {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.8rem;
+    }
+    
+    .app-footer {
+        padding: 1rem 1.2rem;
     }
 }
