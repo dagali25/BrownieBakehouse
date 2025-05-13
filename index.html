@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Brownie House</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <h1>Luxury Brownie House</h1>
+                <p>Premium Desserts Delivered</p>
+            </div>
+            <div class="cart-icon" id="cartIcon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <section class="menu-section">
+                <h2 class="section-title">Dessert Menu</h2>
+                <div class="menu-item">
+                    <h3>Brownie Box (16 pieces)</h3>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="brownieBox">
+                            <option value="0">Select quantity</option>
+                            <option value="1">1 box - £28</option>
+                            <option value="2">2 boxes - £56</option>
+                            <option value="3">3 boxes - £84</option>
+                            <option value="4">4 boxes - £112</option>
+                            <option value="5">5 boxes - £140</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Brownie Box">Add</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <h3>Brownie Box + Chocolate Strawberries (16 pieces)</h3>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="brownieStrawberries">
+                            <option value="0">Select quantity</option>
+                            <option value="1">1 box - £35</option>
+                            <option value="2">2 boxes - £70</option>
+                            <option value="3">3 boxes - £105</option>
+                            <option value="4">4 boxes - £140</option>
+                            <option value="5">5 boxes - £175</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Brownie Box + Strawberries">Add</button>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <h3>Mini Fruit Tarts</h3>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="fruitTarts">
+                            <option value="0">Select quantity</option>
+                            <option value="9">9 tarts - £10</option>
+                            <option value="18">18 tarts - £18</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Mini Fruit Tarts">Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2 class="section-title">Mini Dessert Shots</h2>
+                <p class="section-subtitle">Each box contains 24 shots. Mix up to 2 flavors per box.</p>
+                
+                <div class="shots-section">
+                    <h3>Trifle Shots (£2 each, min 24)</h3>
+                    <div class="flavor-selection">
+                        <select class="flavor-select" id="trifleFlavor1">
+                            <option value="">Select first flavor</option>
+                            <option value="Classic">Classic</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Mango">Mango</option>
+                        </select>
+                        <select class="flavor-select" id="trifleFlavor2">
+                            <option value="">Select second flavor (optional)</option>
+                            <option value="Classic">Classic</option>
+                            <option value="Chocolate">Chocolate</option>
+                            <option value="Mango">Mango</option>
+                        </select>
+                    </div>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="trifleQuantity">
+                            <option value="0">Select boxes</option>
+                            <option value="1">1 box (24) - £48</option>
+                            <option value="2">2 boxes (48) - £96</option>
+                            <option value="3">3 boxes (72) - £144</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Trifle Shots">Add</button>
+                    </div>
+                </div>
+
+                <div class="shots-section">
+                    <h3>Cheesecake Shots (£2 each, min 24)</h3>
+                    <div class="flavor-selection">
+                        <select class="flavor-select" id="cheesecakeFlavor1">
+                            <option value="">Select first flavor</option>
+                            <option value="Oreo">Oreo cheesecake</option>
+                            <option value="Biscoff">Biscoff</option>
+                            <option value="Gulab jamun">Gulab jamun cheesecake</option>
+                            <option value="Mango">Mango cheesecake</option>
+                            <option value="Mango Passion">Mango and Passion fruit</option>
+                            <option value="Aero mint">Aero mint</option>
+                            <option value="Jelly">Jelly shots</option>
+                            <option value="Kinder">Kinder bueno</option>
+                            <option value="Maltesers">Maltesers</option>
+                            <option value="Lemon">Lemon cheesecake</option>
+                            <option value="Terrys">Terrys chocolate orange</option>
+                            <option value="Banoffee">Banoffee cheesecake</option>
+                            <option value="Vanilla">Vanilla cheesecake with fruits</option>
+                            <option value="Pistachio">Pistachio cheesecake</option>
+                        </select>
+                        <select class="flavor-select" id="cheesecakeFlavor2">
+                            <option value="">Select second flavor (optional)</option>
+                            <option value="Oreo">Oreo cheesecake</option>
+                            <option value="Biscoff">Biscoff</option>
+                            <option value="Gulab jamun">Gulab jamun cheesecake</option>
+                            <option value="Mango">Mango cheesecake</option>
+                            <option value="Mango Passion">Mango and Passion fruit</option>
+                            <option value="Aero mint">Aero mint</option>
+                            <option value="Jelly">Jelly shots</option>
+                            <option value="Kinder">Kinder bueno</option>
+                            <option value="Maltesers">Maltesers</option>
+                            <option value="Lemon">Lemon cheesecake</option>
+                            <option value="Terrys">Terrys chocolate orange</option>
+                            <option value="Banoffee">Banoffee cheesecake</option>
+                            <option value="Vanilla">Vanilla cheesecake with fruits</option>
+                            <option value="Pistachio">Pistachio cheesecake</option>
+                        </select>
+                    </div>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="cheesecakeQuantity">
+                            <option value="0">Select boxes</option>
+                            <option value="1">1 box (24) - £48</option>
+                            <option value="2">2 boxes (48) - £96</option>
+                            <option value="3">3 boxes (72) - £144</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Cheesecake Shots">Add</button>
+                    </div>
+                </div>
+
+                <div class="shots-section">
+                    <h3>Classic Dessert Shots (£2 each, min 24)</h3>
+                    <div class="flavor-selection">
+                        <select class="flavor-select" id="classicFlavor1">
+                            <option value="">Select first flavor</option>
+                            <option value="Tiramisu">Tiramisu</option>
+                            <option value="Kheer">Kheer</option>
+                        </select>
+                        <select class="flavor-select" id="classicFlavor2">
+                            <option value="">Select second flavor (optional)</option>
+                            <option value="Tiramisu">Tiramisu</option>
+                            <option value="Kheer">Kheer</option>
+                        </select>
+                    </div>
+                    <div class="item-controls">
+                        <select class="quantity-select" id="classicQuantity">
+                            <option value="0">Select boxes</option>
+                            <option value="1">1 box (24) - £48</option>
+                            <option value="2">2 boxes (48) - £96</option>
+                            <option value="3">3 boxes (72) - £144</option>
+                        </select>
+                        <button class="add-to-cart" data-item="Classic Dessert Shots">Add</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                <h2 class="section-title">Our Dessert Gallery</h2>
+                <div class="gallery-container">
+                    <div class="gallery-track" id="galleryTrack">
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1564355808539-22fda35bed7e?w=500&auto=format&fit=crop" alt="Brownies">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&auto=format&fit=crop" alt="Chocolate strawberries">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?w=500&auto=format&fit=crop" alt="Fruit tarts">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500&auto=format&fit=crop" alt="Dessert shots">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1542823605-3a0992e27a04?w=500&auto=format&fit=crop" alt="Cheesecake">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=500&auto=format&fit=crop" alt="Trifle">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="modal" id="imageModal">
+                <span class="close-modal">&times;</span>
+                <img class="modal-content" id="modalImage">
+                <div class="modal-caption"></div>
+            </div>
+        </main>
+
+        <div class="cart-sidebar" id="cartSidebar">
+            <div class="cart-header">
+                <h2>Your Order</h2>
+                <button class="close-cart" id="closeCart">&times;</button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <!-- Cart items will be added here dynamically -->
+                <p class="empty-cart-message">Your cart is empty</p>
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cartTotal">£0</span></p>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Checkout via WhatsApp</button>
+        </div>
+
+        <footer class="app-footer">
+            <div class="cta-buttons">
+                <a href="https://www.instagram.com/browniebakehouse_?igsh=MW53aHh1Z3h2dTNpbw==" class="cta-btn instagram" target="_blank">
+                    <i class="fab fa-instagram"></i> Follow Us
+                </a>
+                <button class="cta-btn whatsapp" id="whatsappBtn">
+                    <i class="fab fa-whatsapp"></i> Message Us
+                </button>
+            </div>
+            <p class="copyright">&copy; 2023 Luxury Brownie House. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
