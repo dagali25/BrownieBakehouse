@@ -220,10 +220,11 @@ body {
     border-radius: 8px;
 }
 
-.gallery-track i display: flex;
-gap: 1.5rem;
-animation: scroll 20s linear infinite;
-    width: calc(500px * 6);
+.gallery-track {
+    display: flex;
+    gap: 1.5rem;
+    animation: scroll 20s linear infinite;
+    width: calc(220px * 6); /* 6 items */
 }
 
 .gallery-item {
@@ -270,7 +271,7 @@ animation: scroll 20s linear infinite;
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-220px * 3));
+        transform: translateX(calc(-220px * 3)); /* Move by half the items */
     }
 }
 
