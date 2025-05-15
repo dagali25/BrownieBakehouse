@@ -69,10 +69,6 @@ body {
     text-transform: uppercase;
 }
 
-.logo h1 span {
-    color: var(--primary-color);
-}
-
 .logo p {
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -109,7 +105,7 @@ body {
 
 .app-main {
     padding: 1.5rem;
-    padding-bottom: 180px; /* Increased for footer space */
+    padding-bottom: 180px;
 }
 
 .section-title {
@@ -208,8 +204,6 @@ body {
     margin-bottom: 1.5rem;
 }
 
-/* [Previous CSS content remains the same until the gallery section] */
-
 .gallery-section {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -227,7 +221,6 @@ body {
     gap: 1.5rem;
     animation: scroll 20s linear infinite;
     width: calc(220px * 6);
-    cursor: pointer;
 }
 
 .gallery-item {
@@ -339,8 +332,6 @@ body {
     font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
-
-/* [Rest of your existing CSS remains the same] */
 
 .cart-sidebar {
     position: fixed;
@@ -542,7 +533,6 @@ body {
     margin-top: 1rem;
 }
 
-/* Animation for luxury feel */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -552,7 +542,6 @@ body {
     animation: fadeIn 0.6s ease-out forwards;
 }
 
-/* Responsive adjustments */
 @media (max-width: 480px) {
     .app-header {
         padding: 1.2rem;
@@ -560,7 +549,7 @@ body {
     
     .app-main {
         padding: 1.2rem;
-        padding-bottom: 200px; /* Even more space on mobile */
+        padding-bottom: 200px;
     }
     
     .item-controls {
