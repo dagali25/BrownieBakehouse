@@ -241,25 +241,42 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalImg = document.getElementById('modalImage');
     const captionText = document.querySelector('.modal-caption');
     const closeModal = document.querySelector('.close-modal');
-    
-    document.querySelectorAll('.gallery-item img').forEach(img => {
-        img.addEventListener('click', function() {
-            modal.style.display = 'block';
-            modalImg.src = this.src;
-            captionText.textContent = this.alt;
+
+    // Make gallery items clickable
+    document.querySelectorAll('.gallery-item').forEach(item => {
+        item.addEventListener('click', function() {
+            const img = this.querySelector('img');
+            if (img) {
+                modal.style.display = 'block';
+                modalImg.src = img.src;
+                modalImg.alt = img.alt;
+                captionText.textContent = img.alt;
+                document.body.style.overflow = 'hidden';
+            }
         });
     });
-    
+
+    // Close modal when clicking the X
     closeModal.addEventListener('click', function() {
         modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
-    
+
+    // Close modal when clicking outside the image
     window.addEventListener('click', function(event) {
         if (event.target === modal) {
             modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
     });
-});
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
 document.addEventListener('DOMContentLoaded', function() {
     // [Previous cart and UI code remains exactly the same until the checkoutBtn event listener]
 
