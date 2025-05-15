@@ -301,3 +301,41 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // [Rest of your existing code remains the same]
 });
+// Select all gallery items
+const galleryItems = document.querySelectorAll('.gallery-item');
+const modal = document.createElement('div');
+modal.classList.add('modal');
+
+// Add the modal structure
+modal.innerHTML = `
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modal-image">
+    <div class="modal-caption"></div>
+`;
+document.body.appendChild(modal);
+
+const modalImage = document.getElementById('modal-image');
+const modalCaption = modal.querySelector('.modal-caption');
+const closeModal = modal.querySelector('.close-modal');
+
+// Event listener for each gallery item
+galleryItems.forEach(item => {
+    item.addEventListener('click', (e) => {
+        const img = item.querySelector('img');
+        modal.style.display = 'block';
+        modalImage.src = img.src;
+        modalCaption.textContent = img.alt || 'Image Preview';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+
+// Close modal on clicking outside the image
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+    }
+});
