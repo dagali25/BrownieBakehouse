@@ -199,37 +199,43 @@ document.addEventListener('DOMContentLoaded', function() {
         cartTotal.textContent = `£${total}`;
     }
     
-    // WORKING WhatsApp Checkout Functionality
+    // WhatsApp Checkout Functionality
     checkoutBtn.addEventListener('click', function() {
         if (cart.length === 0) {
             alert('Your cart is empty');
             return;
         }
         
-        // Build the order message with proper line breaks
-        let message = `Hello Brownie Bakehouse,\n\nI would like to place an order:\n\n`;
+        // Build the order summary
+        let orderSummary = `*NEW ORDER*%0A%0A`;
+        orderSummary += `*Customer Order Details*%0A`;
         
-        cart.forEach(item => {
-            message += `• ${item.name}\n`;
-            message += `  - ${item.details}\n`;
-            message += `  - Price: £${item.price}\n\n`;
+        // Add each cart item to the summary
+        cart.forEach((item, index) => {
+            orderSummary += `%0A*Item ${index + 1}*: ${item.name}%0A`;
+            orderSummary += `- Details: ${item.details}%0A`;
+            orderSummary += `- Price: £${item.price}%0A`;
         });
         
+        // Calculate and add total
         const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-        message += `*TOTAL: £${totalPrice}*\n\n`;
-        message += 'Please let me know how to proceed with payment and delivery. Thank you!';
+        orderSummary += `%0A*TOTAL: £${totalPrice}*%0A%0A`;
         
-        // Encode the message for URL
-        const encodedMessage = encodeURIComponent(message);
+        // Add delivery instructions prompt
+        orderSummary += `Please reply with:%0A`;
+        orderSummary += `1. Delivery address%0A`;
+        orderSummary += `2. Preferred delivery date/time%0A`;
+        orderSummary += `3. Any special instructions%0A%0A`;
+        orderSummary += `Thank you!`;
         
-        // Create WhatsApp URL with international number format
-        const whatsappUrl = `https://wa.me/447869990011?text=${encodedMessage}`;
+        // Create WhatsApp URL
+        const whatsappUrl = `https://wa.me/447869990011?text=${orderSummary}`;
         
-        // Open WhatsApp
-        window.location.href = whatsappUrl;
+        // Open WhatsApp with order details
+        window.open(whatsappUrl, '_blank');
     });
     
-    // WORKING WhatsApp Contact Button
+    // WhatsApp Contact Button
     whatsappBtn.addEventListener('click', function() {
         // Simple contact URL without message
         const whatsappUrl = 'https://wa.me/447869990011';
@@ -277,44 +283,4 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'auto';
         }
     });
-document.addEventListener('DOMContentLoaded', function() {
-    // [Previous cart and UI code remains exactly the same until the checkoutBtn event listener]
-
-    // WORKING WhatsApp Checkout with Order Details
-    checkoutBtn.addEventListener('click', function() {
-        if (cart.length === 0) {
-            alert('Your cart is empty');
-            return;
-        }
-        
-        // Build the order summary
-        let orderSummary = `*NEW ORDER*%0A%0A`;
-        orderSummary += `*Customer Order Details*%0A`;
-        
-        // Add each cart item to the summary
-        cart.forEach((item, index) => {
-            orderSummary += `%0A*Item ${index + 1}*: ${item.name}%0A`;
-            orderSummary += `- Details: ${item.details}%0A`;
-            orderSummary += `- Price: £${item.price}%0A`;
-        });
-        
-        // Calculate and add total
-        const totalPrice = cart.reduce((sum, item) => sum + item.price, 0);
-        orderSummary += `%0A*TOTAL: £${totalPrice}*%0A%0A`;
-        
-        // Add delivery instructions prompt
-        orderSummary += `Please reply with:%0A`;
-        orderSummary += `1. Delivery address%0A`;
-        orderSummary += `2. Preferred delivery date/time%0A`;
-        orderSummary += `3. Any special instructions%0A%0A`;
-        orderSummary += `Thank you!`;
-        
-        // Create WhatsApp URL
-        const whatsappUrl = `https://wa.me/447869990011?text=${orderSummary}`;
-        
-        // Open WhatsApp with order details
-        window.open(whatsappUrl, '_blank');
-    });
-
-    // [Rest of your existing code remains the same]
-+});
+});
