@@ -300,7 +300,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // [Rest of your existing code remains the same]
-});
+
 // Select all gallery items
 const galleryItems = document.querySelectorAll('.gallery-item');
 const modal = document.createElement('div');
