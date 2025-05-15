@@ -220,7 +220,7 @@ body {
     border-radius: 8px;
 }
 
-gallery-track {
+.gallery-track {
     animation: scroll 20s linear infinite;
     width: calc(500px * 6);
 }
