@@ -300,4 +300,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // [Rest of your existing code remains the same]
-});
++});
