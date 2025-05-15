@@ -208,6 +208,8 @@ body {
     margin-bottom: 1.5rem;
 }
 
+/* [Previous CSS content remains the same until the gallery section] */
+
 .gallery-section {
     margin-top: 3rem;
     margin-bottom: 2rem;
@@ -224,7 +226,8 @@ body {
     display: flex;
     gap: 1.5rem;
     animation: scroll 20s linear infinite;
-    width: calc(220px * 6); /* 6 items */
+    width: calc(220px * 6);
+    cursor: pointer;
 }
 
 .gallery-item {
@@ -271,31 +274,38 @@ body {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-220px * 3)); /* Move by half the items */
+        transform: translateX(calc(-220px * 3));
     }
 }
 
 .modal {
     display: none;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(10, 10, 10, 0.95);
     overflow: auto;
+    backdrop-filter: blur(5px);
 }
 
 .modal-content {
     display: block;
     margin: auto;
     max-width: 90%;
-    max-height: 80%;
-    margin-top: 5vh;
+    max-height: 80vh;
+    margin-top: 10vh;
     border: 2px solid var(--primary-color);
     border-radius: 8px;
     box-shadow: 0 0 30px rgba(255, 108, 12, 0.3);
+    cursor: zoom-out;
+    transition: transform 0.3s;
+}
+
+.modal-content:hover {
+    transform: scale(1.02);
 }
 
 .close-modal {
@@ -329,6 +339,8 @@ body {
     font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
+
+/* [Rest of your existing CSS remains the same] */
 
 .cart-sidebar {
     position: fixed;
